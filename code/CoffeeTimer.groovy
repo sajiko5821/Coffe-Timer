@@ -19,9 +19,9 @@ definition(
     author: "Lukas Weier",
     description: "An App to organize the automatic Coffee Maschine routine in the morning",
     category: "Convenience",
-    iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
-    iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
-    iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png")
+    iconUrl: "https://raw.githubusercontent.com/sajiko5821/Coffe-Timer/main/Icons/coffeeTimerLogo.png",
+    iconX2Url: "https://raw.githubusercontent.com/sajiko5821/Coffe-Timer/main/Icons/coffeeTimerLogo.png",
+    iconX3Url: "https://raw.githubusercontent.com/sajiko5821/Coffe-Timer/main/Icons/coffeeTimerLogo.png")
 
 preferences {
     page(name: "mainPage", title: "Configure Everything", install: true, uninstall: true,submitOnChange: true) {
