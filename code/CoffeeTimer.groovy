@@ -89,6 +89,13 @@ preferences {
             input "coffeeSwitch12", "capability.switch", title: "Coffee Switch 12", multiple: false, required: false
             input "time12", "time", title: "Timing Option 12", multiple: false, required: false
 	    }
+        
+        section("Timing Options"){
+        	input"timing10", "capability.switch", title: "Run Coffee in 10 Minutes", multiple: false, required: false
+          	input"timing15", "capability.switch", title: "Run Coffee in 15 Minutes", multiple: false, required: false
+            input"timing20", "capability.switch", title: "Run Coffee in 20 Minutes", multiple: false, required: false
+            input"timing30", "capability.switch", title: "Run Coffee in 25 Minutes", multiple: false, required: false
+        }
     }
 }
 
@@ -117,6 +124,10 @@ def initialize() {
     schedule(time11, runCoffee11)
     schedule(time12, runCoffee12)
     subscribe(coffeeMaschine, "switch.on", delay)
+    subscribe(timing10, "switch.on", RunIn10)
+    subscribe(timing15, "switch.on", RunIn15)
+    subscribe(timing20, "switch.on", RunIn20)
+    subscribe(timing30, "switch.on", RunIn30)
 }
 
 def delay(evt){
@@ -125,13 +136,35 @@ def delay(evt){
 	runIn(60*60*elapse, coffeeMaschineOff)
 }
 
+def coffeeMaschineOn(evt){
+	coffeeMaschine.on()
+}
+
 def coffeeMaschineOff(evt){
 	coffeeMaschine.off()
+}
+
+def RunIn10(evt){
+	runIn(60*10, coffeeMaschineOn)
+}
+
+def RunIn15(evt){
+	runIn(60*15, coffeeMaschineOn)
+}
+
+def RunIn20(evt){
+	runIn(60*20, coffeeMaschineOn)
+}
+
+def RunIn30(evt){
+	runIn(60*30, coffeeMaschineOn)
 }
 
 def runCoffee1(evt){
     if(coffeeSwitch1.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch1.off()
         log.debug "runCoffee1 successfull"
     }
@@ -140,6 +173,8 @@ def runCoffee1(evt){
 def runCoffee2(evt){
     if(coffeeSwitch2.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch2.off()
         log.debug "runCoffee2 successfull"
     }
@@ -148,6 +183,8 @@ def runCoffee2(evt){
 def runCoffee3(evt){
     if(coffeeSwitch3.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch3.off()
         log.debug "runCoffee3 successfull"
     }
@@ -156,6 +193,8 @@ def runCoffee3(evt){
 def runCoffee4(evt){
     if(coffeeSwitch4.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch4.off()
         log.debug "runCoffee4 successfull"
     }
@@ -164,6 +203,8 @@ def runCoffee4(evt){
 def runCoffee5(evt){
     if(coffeeSwitch5.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch5.off()
         log.debug "runCoffee5 successfull"
     }
@@ -180,6 +221,8 @@ def runCoffee6(evt){
 def runCoffee7(evt){
     if(coffeeSwitch7.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch7.off()
         log.debug "runCoffee7 successfull"
     }
@@ -188,6 +231,8 @@ def runCoffee7(evt){
 def runCoffee8(evt){
     if(coffeeSwitch8.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch8.off()
         log.debug "runCoffee8 successfull"
     }
@@ -196,6 +241,8 @@ def runCoffee8(evt){
 def runCoffee9(evt){
     if(coffeeSwitch9.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch9.off()
         log.debug "runCoffee9 successfull"
     }
@@ -204,6 +251,8 @@ def runCoffee9(evt){
 def runCoffee10(evt){
     if(coffeeSwitch10.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch10.off()
         log.debug "runCoffee10 successfull"
     }
@@ -212,6 +261,8 @@ def runCoffee10(evt){
 def runCoffee11(evt){
     if(coffeeSwitch11.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch11.off()
         log.debug "runCoffee11 successfull"
     }
@@ -220,6 +271,8 @@ def runCoffee11(evt){
 def runCoffee12(evt){
     if(coffeeSwitch12.currentSwitch == "on"){
     	coffeeMaschine.on()
+        coffeeMaschine.on()
+        coffeeMaschine.on()
         coffeeSwitch12.off()
         log.debug "runCoffee12 successfull"
     }  
